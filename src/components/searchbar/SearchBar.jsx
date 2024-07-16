@@ -15,7 +15,7 @@ const SearchBar = () => {
           <div>
             <input
               type="text"
-              className="border-0 border-b bg-transparent border-white focus:outline-none focus:ring-0 focus:border-white"
+              className="border-0 border-b bg-transparent border-yellow-300 focus:outline-none focus:ring-0 focus:border-white"
               placeholder=""
             />
           </div>
