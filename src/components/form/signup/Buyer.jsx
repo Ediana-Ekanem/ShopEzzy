@@ -1,7 +1,7 @@
 import React from "react";
 
 const Buyer = () => {
-  return <div></div>;
+  return <div>Buyer</div>;
 };
 
 export default Buyer;

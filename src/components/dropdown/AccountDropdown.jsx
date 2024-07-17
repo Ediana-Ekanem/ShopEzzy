@@ -13,7 +13,7 @@ const AccountDropdown = () => {
   };
 
   return (
-    <div className="absolute left-0 mt-12 w-32 bg-white text-black shadow-lg z-20">
+    <div className="absolute left-0 md:mt-12 w-32 bg-white text-black shadow-lg z-20">
       <ul className="flex flex-col justify-center items-center">
         <li className="px-4 py-3 hover:bg-slate-500 hover:text-white transition-colors duration-300 w-full border-b">
           <Link to="/profile" className="w-full block text-center text-sm">
