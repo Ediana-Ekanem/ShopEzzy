@@ -28,16 +28,16 @@ const Desktop = ({
         </div>
       </div>
       <ul className="flex gap-5 items-center text-[16px]">
-        <li className="hover:text-orange-400 transition-all">
+        <li className="hover:text-blue-500 transition-all">
           <Link to="/">Home</Link>
         </li>
-        <li className="hover:text-orange-400 transition-all">
+        <li className=" hover:text-blue-500 transition-all">
           <Link to="shop">Shop</Link>
         </li>
         <div className="relative">
           <li
             onClick={toggleAccountDropdown}
-            className="cursor-pointer flex items-center gap-1 hover:text-orange-400 transition-all"
+            className="cursor-pointer flex items-center gap-1  hover:text-blue-500 transition-all"
           >
             <span>Account</span>
             <FaChevronDown
@@ -58,10 +58,10 @@ const Desktop = ({
         <div className="relative">
           <li
             onClick={toggleHelpDropdown}
-            className="cursor-pointer flex items-center gap-1 hover:text-orange-400 transition-all"
+            className="cursor-pointer flex items-center gap-1  hover:text-blue-500 transition-all"
           >
             <MdOutlineHelp size={25} />
-            <span>Help</span>
+            {/* <span>Help</span> */}
             <FaChevronDown
               className={`transform transition-transform duration-300 ${
                 isHelpDropdownVisible ? "rotate-180" : "rotate-0"
@@ -76,7 +76,7 @@ const Desktop = ({
             </div>
           )}
         </div>
-        <li className="hover:text-orange-400 transition-all">
+        <li className=" hover:text-blue-500 transition-all">
           <Link to="cart">
             <FaShoppingCart size={25} />
           </Link>

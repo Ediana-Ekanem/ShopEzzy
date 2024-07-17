@@ -15,7 +15,7 @@ const AccountDropdown = () => {
   return (
     <div className="absolute left-0 md:mt-12 w-32 bg-white text-black shadow-lg z-20">
       <ul className="flex flex-col justify-center items-center">
-        <li className="px-4 py-3 hover:bg-slate-500 hover:text-white transition-colors duration-300 w-full border-b">
+        <li className="px-4 py-3 hover:bg-blue-300 hover:text-white transition-colors duration-300 w-full border-b">
           <Link to="/profile" className="w-full block text-center text-sm">
             <span className="flex gap-2 items-center ">
               <FaRegUser size={12} />
@@ -23,7 +23,7 @@ const AccountDropdown = () => {
             </span>
           </Link>
         </li>
-        <li className="px-4 py-3 hover:bg-slate-500 hover:text-white transition-colors duration-300 w-full border-b">
+        <li className="px-4 py-3 hover:bg-blue-300 hover:text-white transition-colors duration-300 w-full border-b">
           <Link to="/login" className="w-full block text-center text-sm">
             <span className="flex gap-2 items-center ">
               <TbLogin2 size={15} />
@@ -32,7 +32,7 @@ const AccountDropdown = () => {
           </Link>
         </li>
         <li
-          className="px-4 py-3 hover:bg-slate-500 hover:text-white transition-colors duration-300 w-full relative cursor-pointer border-b"
+          className="px-4 py-3 hover:bg-blue-300 hover:text-white transition-colors duration-300 w-full relative cursor-pointer border-b"
           onClick={toggleSubmenu}
         >
           <div className="flex items-center gap-1 justify-center">
@@ -49,7 +49,7 @@ const AccountDropdown = () => {
           </div>
           {showSubmenu && (
             <ul className="absolute left-[135px] top-0 mt-2 w-20 bg-white text-black shadow-lg z-30">
-              <li className="px-4 py-2 hover:bg-slate-700 hover:text-white transition-colors duration-300 border-b">
+              <li className="px-4 py-2 hover:bg-blue-400 hover:text-white transition-colors duration-300 border-b">
                 <Link
                   to="/signup/seller"
                   className="w-full block text-center text-sm"
@@ -57,7 +57,7 @@ const AccountDropdown = () => {
                   Seller
                 </Link>
               </li>
-              <li className="px-2 py-2 hover:bg-slate-700 hover:text-white transition-colors duration-300">
+              <li className="px-2 py-2 hover:bg-blue-400 hover:text-white transition-colors duration-300">
                 <Link
                   to="/signup/buyer"
                   className="w-full block text-center text-sm"
