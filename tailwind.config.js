@@ -5,6 +5,7 @@ export default {
     extend: {
       fontFamily: {
         Roboto: ["Roboto Mono", "monospace"],
+        Montserrat: ["Montserrat", "sans-serif"],
       },
     },
   },

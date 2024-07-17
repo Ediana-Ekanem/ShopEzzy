@@ -32,17 +32,17 @@ const Mobile = ({
       </div>
 
       {nav && (
-        <div className="flex flex-col items-center bg-slate-700 text-white text-lg space-y-5">
+        <div className="flex flex-col items-center bg-[#FEAB3A] text-white text-lg space-y-5">
           <div className="w-full flex justify-center py-2">
             <SearchBar />
           </div>
-          <ul className="flex flex-col gap-5 items-center text-[16px]">
-            <li className="hover:text-orange-400 transition-all">
+          <ul className="flex flex-col gap-3 md:gap-5 items-center text-[16px]">
+            <li className=" hover:text-blue-500 transition-all">
               <Link to="/" onClick={handleClick}>
                 Home
               </Link>
             </li>
-            <li className="hover:text-orange-400 transition-all">
+            <li className=" hover:text-blue-500 transition-all">
               <Link to="/shop" onClick={handleClick}>
                 Shop
               </Link>
@@ -50,7 +50,7 @@ const Mobile = ({
             <div className="relative w-full">
               <li
                 onClick={toggleAccountDropdown}
-                className="cursor-pointer flex items-center gap-1 justify-between px-5 py-3 hover:text-orange-400 transition-all w-full"
+                className="cursor-pointer flex items-center gap-1 justify-between px-5 py-3 hover:text-blue-500 transition-all w-full"
               >
                 <span>Account</span>
                 <FaChevronDown
@@ -66,7 +66,7 @@ const Mobile = ({
             <div className="relative w-full">
               <li
                 onClick={toggleHelpDropdown}
-                className="cursor-pointer flex items-center gap-1 justify-between px-5 py-3 hover:text-orange-400 transition-all w-full"
+                className="cursor-pointer flex items-center gap-1 justify-between px-5 py-3 hover:text-blue-500 transition-all w-full"
               >
                 <MdOutlineHelp size={25} />
                 <span>Help</span>
@@ -79,7 +79,7 @@ const Mobile = ({
 
               {isHelpDropdownVisible && <Help isMobile={true} />}
             </div>
-            <li className="hover:text-orange-400 transition-all">
+            <li className=" hover:text-blue-500 transition-all">
               <Link to="/cart" onClick={handleClick}>
                 <FaShoppingCart size={25} />
               </Link>

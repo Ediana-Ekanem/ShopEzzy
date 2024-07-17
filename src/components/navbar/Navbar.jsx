@@ -26,24 +26,28 @@ const Navbar = () => {
     setHelpDropdownVisible(false);
   };
 
+  // bg-slate-700 text-white
+
   return (
-    <div className="bg-slate-700 text-white py-10 font-Roboto">
-      <Container>
-        <Desktop
-          isAccountDropdownVisible={isAccountDropdownVisible}
-          isHelpDropdownVisible={isHelpDropdownVisible}
-          toggleAccountDropdown={toggleAccountDropdown}
-          toggleHelpDropdown={toggleHelpDropdown}
-          closeDropdowns={closeDropdowns}
-        />
-        <Mobile
-          isAccountDropdownVisible={isAccountDropdownVisible}
-          isHelpDropdownVisible={isHelpDropdownVisible}
-          toggleAccountDropdown={toggleAccountDropdown}
-          toggleHelpDropdown={toggleHelpDropdown}
-          closeDropdowns={closeDropdowns}
-        />
-      </Container>
+    <div className="bg-[#FEAB3A] text-white shadow-2xl py-10 font-Montserrat sticky top-0 w-full">
+      <nav className="text-shadow-xl font-bold ">
+        <Container>
+          <Desktop
+            isAccountDropdownVisible={isAccountDropdownVisible}
+            isHelpDropdownVisible={isHelpDropdownVisible}
+            toggleAccountDropdown={toggleAccountDropdown}
+            toggleHelpDropdown={toggleHelpDropdown}
+            closeDropdowns={closeDropdowns}
+          />
+          <Mobile
+            isAccountDropdownVisible={isAccountDropdownVisible}
+            isHelpDropdownVisible={isHelpDropdownVisible}
+            toggleAccountDropdown={toggleAccountDropdown}
+            toggleHelpDropdown={toggleHelpDropdown}
+            closeDropdowns={closeDropdowns}
+          />
+        </Container>
+      </nav>
     </div>
   );
 };
