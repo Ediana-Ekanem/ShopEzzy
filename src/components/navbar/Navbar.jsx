@@ -1,42 +1,48 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
 import Container from "../container/Container";
-import logo from "/assets/icons/logo.svg";
-import SearchBar from "../searchbar/SearchBar";
-import { FaShoppingCart } from "react-icons/fa";
+import Desktop from "./Desktop";
+import Mobile from "./Mobile";
 
 const Navbar = () => {
+  const [isAccountDropdownVisible, setAccountDropdownVisible] = useState(false);
+  const [isHelpDropdownVisible, setHelpDropdownVisible] = useState(false);
+
+  const toggleAccountDropdown = () => {
+    setAccountDropdownVisible(!isAccountDropdownVisible);
+    if (isHelpDropdownVisible) {
+      setHelpDropdownVisible(false);
+    }
+  };
+
+  const toggleHelpDropdown = () => {
+    setHelpDropdownVisible(!isHelpDropdownVisible);
+    if (isAccountDropdownVisible) {
+      setAccountDropdownVisible(false);
+    }
+  };
+
+  const closeDropdowns = () => {
+    setAccountDropdownVisible(false);
+    setHelpDropdownVisible(false);
+  };
+
   return (
-    <div className="bg-cyan-700 text-white py-10 font-Roboto">
+    <div className="bg-slate-700 text-white py-10 font-Roboto">
       <Container>
-        <nav className="flex gap-20  text-lg items-center justify-between">
-          <div className="flex gap-5 items-center">
-            <div className="w-32">
-              <Link to="/">
-                <img src={logo} alt="logo" />
-              </Link>
-            </div>
-            <div>
-              <SearchBar />
-            </div>
-          </div>
-          <ul className="flex gap-5 items-center">
-            <Link to="/">
-              <li>Home</li>
-            </Link>
-            <Link to="shop">
-              <li>Shop</li>
-            </Link>
-            <Link to="account">
-              <li>Account</li>
-            </Link>
-            <Link to="cart">
-              <li>
-                <FaShoppingCart size={25} />
-              </li>
-            </Link>
-          </ul>
-        </nav>
+        <Desktop
+          isAccountDropdownVisible={isAccountDropdownVisible}
+          isHelpDropdownVisible={isHelpDropdownVisible}
+          toggleAccountDropdown={toggleAccountDropdown}
+          toggleHelpDropdown={toggleHelpDropdown}
+          closeDropdowns={closeDropdowns}
+        />
+        <Mobile
+          isAccountDropdownVisible={isAccountDropdownVisible}
+          isHelpDropdownVisible={isHelpDropdownVisible}
+          toggleAccountDropdown={toggleAccountDropdown}
+          toggleHelpDropdown={toggleHelpDropdown}
+          closeDropdowns={closeDropdowns}
+        />
       </Container>
     </div>
   );

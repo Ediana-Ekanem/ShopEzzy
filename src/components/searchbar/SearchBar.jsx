@@ -12,10 +12,10 @@ const SearchBar = () => {
       <form className="flex items-center justify-center ">
         <CiSearch size={25} onClick={handleIconClick} />
         {showSearch && (
-          <div>
+          <div className="w-80">
             <input
               type="text"
-              className="border-0 border-b bg-transparent border-yellow-300 focus:outline-none focus:ring-0 focus:border-white"
+              className=" w-full rounded-md  md:rounded-none py-2 border-0 border-b text-black md:text-white bg-white md:bg-transparent  md:border-white focus:outline-none focus:ring-0 focus:border-white ps-3 md:ps-0 ms-2 text-sm"
               placeholder=""
             />
           </div>
