@@ -16,20 +16,20 @@ function App() {
   return (
     <>
       <Navbar />
-      <div className="flex justify-center items-center h-screen">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          {/* <Route path="/shop" element={<Shop />} /> */}
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup/buyer" element={<Buyer />} />
-          <Route path="/signup/seller" element={<Seller />} />
-          <Route path="/help" element={<HelpCenter />} />
-          <Route path="/order" element={<TrackOrder />} />
-          <Route path="/policy" element={<Policy />} />
-          <Route path="/cart" element={<Cart />} />
-        </Routes>
-      </div>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        {/* <Route path="/shop" element={<Shop />} /> */}
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup/buyer" element={<Buyer />} />
+        <Route path="/signup/seller" element={<Seller />} />
+        <Route path="/help" element={<HelpCenter />} />
+        <Route path="/order" element={<TrackOrder />} />
+        <Route path="/policy" element={<Policy />} />
+        <Route path="/cart" element={<Cart />} />
+      </Routes>
+
       <Footer />
     </>
   );
