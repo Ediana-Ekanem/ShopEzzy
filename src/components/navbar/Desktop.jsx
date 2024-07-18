@@ -31,9 +31,9 @@ const Desktop = ({
         <li className="hover:text-blue-500 transition-all">
           <Link to="/">Home</Link>
         </li>
-        <li className=" hover:text-blue-500 transition-all">
+        {/* <li className=" hover:text-blue-500 transition-all">
           <Link to="shop">Shop</Link>
-        </li>
+        </li> */}
         <div className="relative">
           <li
             onClick={toggleAccountDropdown}

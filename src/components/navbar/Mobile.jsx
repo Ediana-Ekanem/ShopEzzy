@@ -43,9 +43,9 @@ const Mobile = ({
               </Link>
             </li>
             <li className=" hover:text-blue-500 transition-all">
-              <Link to="/shop" onClick={handleClick}>
+              {/* <Link to="/shop" onClick={handleClick}>
                 Shop
-              </Link>
+              </Link> */}
             </li>
             <div className="relative w-full">
               <li
