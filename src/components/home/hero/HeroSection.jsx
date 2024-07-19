@@ -11,16 +11,12 @@ const HeroSection = () => {
     "https://res.cloudinary.com/dminu0vmy/image/upload/v1721297145/eyfvwtex6qauwenz3ldw.png";
 
   return (
-    <div className=" flex justify-between">
-      <div className="flex flex-col items-center justify-center">
-        <Category />
-      </div>
-      <div className="flex flex-col">
+    <div className="md:flex justify-between">
+      <div className="flex flex-col flex-[1_0_33%] order-1 md:order-2">
         <div>
           <Carousel />
         </div>
-
-        <div className="flex space-x-5">
+        <div className="hidden md:flex space-x-5">
           <div className="w-[400px] h-[300px]">
             <img
               src={bannerOne}
@@ -43,6 +39,9 @@ const HeroSection = () => {
             />
           </div>
         </div>
+      </div>
+      <div className="flex flex-col items-center justify-center flex-grow order-2 md:order-1 ">
+        <Category />
       </div>
     </div>
   );
