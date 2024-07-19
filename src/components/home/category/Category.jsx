@@ -7,7 +7,7 @@ const Category = () => {
   return (
     <div className="bg-white py-5 shadow-2xl my-5 rounded-lg">
       <Container>
-        <nav className="space-y-10 py-5 px-10 text-slate-950 font-Montserrat">
+        <nav className="space-y-24 py-5 px-10 text-slate-950 font-Montserrat">
           <div className="flex items-center gap-2 mb-1">
             <TbCategoryFilled />
             <h3 className="font-bold">CATEGORIES</h3>

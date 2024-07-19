@@ -21,6 +21,7 @@ import Groceries from "./pages/category/Groceries";
 import Babies from "./pages/category/Babies";
 import Pet from "./pages/category/Pet";
 import Office from "./pages/category/Office";
+import Furniture from "./pages/deals/Furniture";
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
         <Route path="/babies" element={<Babies />} />
         <Route path="/pet" element={<Pet />} />
         <Route path="/office" element={<Office />} />
+        <Route path="/furniture-deals" element={<Furniture />} />
       </Routes>
 
       <Footer />
