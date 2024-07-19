@@ -38,7 +38,7 @@ const Carousel = () => {
   }, [currentIndex]);
 
   return (
-    <div className="md:w-[1230px] h-[330px] md:h-[450px] relative group py-5  ">
+    <div className="md:w-[1220px] h-[330px] md:h-[450px] relative group py-5  ">
       <div
         style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
         className="w-full h-full md:rounded-lg bg-center bg-cover bg-no-repeat duration-500"

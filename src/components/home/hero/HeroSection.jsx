@@ -12,11 +12,11 @@ const HeroSection = () => {
 
   return (
     <div className="md:flex justify-between">
-      <div className="flex flex-col flex-[1_0_33%] order-1 md:order-2">
+      <div className="flex flex-col flex-[1_0_33%] order-1 md:order-2 px-3">
         <div>
           <Carousel />
         </div>
-        <div className="hidden md:flex space-x-5">
+        <div className="hidden md:flex justify-between">
           <div className="w-[400px] h-[300px]">
             <img
               src={bannerOne}
