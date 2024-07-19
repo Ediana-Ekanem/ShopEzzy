@@ -4,13 +4,20 @@ import { RxDotFilled } from "react-icons/rx";
 const Carousel = () => {
   const slides = [
     {
-      url: "https://res.cloudinary.com/dminu0vmy/image/upload/v1721297145/aygvthaepmunafoqip2d.png",
+      url: "https://res.cloudinary.com/dminu0vmy/image/upload/v1717858397/samples/ecommerce/analog-classic.jpg",
     },
     {
-      url: "https://res.cloudinary.com/dminu0vmy/image/upload/v1721297145/eyfvwtex6qauwenz3ldw.png",
+      url: "https://res.cloudinary.com/dminu0vmy/image/upload/v1721343053/gd3qtj2lfukjdaygdqki.jpg",
     },
     {
-      url: "https://res.cloudinary.com/dminu0vmy/image/upload/v1721297145/hsbvko58hqejac3x1wa2.png",
+      url: "https://res.cloudinary.com/dminu0vmy/image/upload/v1721343054/gbluwyg6k7z6xngbswoa.jpg",
+    },
+
+    {
+      url: "https://res.cloudinary.com/dminu0vmy/image/upload/v1717858407/samples/ecommerce/accessories-bag.jpg",
+    },
+    {
+      url: "https://res.cloudinary.com/dminu0vmy/image/upload/v1721343053/t5x7zs4zg5vkrdp4drjd.jpg",
     },
   ];
 
@@ -31,13 +38,13 @@ const Carousel = () => {
   }, [currentIndex]);
 
   return (
-    <div className="w-[800px] h-[600px] relative group py-5  ">
+    <div className="w-[1200px] h-[450px] relative group py-5  ">
       <div
         style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
-        className="w-full h-full rounded bg-center bg-cover duration-500"
+        className="w-full h-full rounded-lg bg-center bg-cover bg-no-repeat duration-500"
       ></div>
       {/* Dots */}
-      <div className=" w-full flex justify-center ">
+      <div className="absolute bottom-6 w-full flex justify-center ">
         {slides.map((slide, slideIndex) => (
           <div key={slideIndex} className="mx-2">
             <RxDotFilled

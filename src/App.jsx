@@ -11,6 +11,16 @@ import HelpCenter from "./pages/HelpCenter";
 import TrackOrder from "./pages/TrackOrder";
 import Policy from "./pages/Policy";
 import Cart from "./pages/Cart";
+import Electronic from "./pages/category/Electronic";
+import Fashion from "./pages/category/Fashion";
+import Health from "./pages/category/Health";
+import Sports from "./pages/category/Sports";
+import Toy from "./pages/category/Toy";
+import Books from "./pages/category/Books";
+import Groceries from "./pages/category/Groceries";
+import Babies from "./pages/category/Babies";
+import Pet from "./pages/category/Pet";
+import Office from "./pages/category/Office";
 
 function App() {
   return (
@@ -28,6 +38,16 @@ function App() {
         <Route path="/order" element={<TrackOrder />} />
         <Route path="/policy" element={<Policy />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/electronic" element={<Electronic />} />
+        <Route path="/fashion" element={<Fashion />} />
+        <Route path="/health" element={<Health />} />
+        <Route path="/sports" element={<Sports />} />
+        <Route path="/toys" element={<Toy />} />
+        <Route path="/books" element={<Books />} />
+        <Route path="/groceries" element={<Groceries />} />
+        <Route path="/babies" element={<Babies />} />
+        <Route path="/pet" element={<Pet />} />
+        <Route path="/office" element={<Office />} />
       </Routes>
 
       <Footer />
