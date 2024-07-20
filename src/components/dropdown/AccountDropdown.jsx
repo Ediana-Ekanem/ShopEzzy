@@ -1,75 +1,41 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { FaChevronDown } from "react-icons/fa";
-import { FaRegUser } from "react-icons/fa";
-import { TbLogin2, TbLogout2 } from "react-icons/tb";
-import { SiGnuprivacyguard } from "react-icons/si";
+import { SlUser, SlLogin, SlLogout } from "react-icons/sl";
 
 const AccountDropdown = () => {
-  const [showSubmenu, setShowSubmenu] = useState(false);
-
-  const toggleSubmenu = () => {
-    setShowSubmenu(!showSubmenu);
-  };
-
   return (
-    <div className="absolute left-0 md:mt-12 w-32 bg-white text-black shadow-lg z-20">
-      <ul className="flex flex-col justify-center items-center">
-        <li className="px-4 py-3 hover:bg-blue-300 hover:text-white transition-colors duration-300 w-full border-b">
-          <Link to="/profile" className="w-full block text-center text-sm">
-            <span className="flex gap-2 items-center ">
-              <FaRegUser size={12} />
-              Profile
-            </span>
+    <div className="absolute left-0 md:mt-12 w-48 bg-gradient-to-r from-gray-100 to-white text-black shadow-2xl rounded-lg z-20">
+      <ul className="flex flex-col">
+        <li className="w-full border-b border-gray-300 rounded-t-lg">
+          <Link
+            to="/profile"
+            className="flex items-center space-x-3 py-3 px-4 hover:bg-blue-100 hover:text-blue-700 transition-colors duration-300 rounded-t-lg"
+          >
+            <SlUser size={20} />
+            <span className="text-md font-normal">Profile</span>
           </Link>
         </li>
-        <li className="px-4 py-3 hover:bg-blue-300 hover:text-white transition-colors duration-300 w-full border-b">
-          <Link to="/login" className="w-full block text-center text-sm">
-            <span className="flex gap-2 items-center ">
-              <TbLogin2 size={15} />
-              Login
-            </span>
+        <li className="w-full border-b border-gray-300">
+          <Link
+            to="/login"
+            className="flex items-center space-x-3 py-3 px-4 hover:bg-blue-100 hover:text-blue-700 transition-colors duration-300"
+          >
+            <SlLogin size={20} />
+            <span className="text-md font-normal">Sign In</span>
           </Link>
         </li>
-        <li
-          className="px-4 py-3 hover:bg-blue-300 hover:text-white transition-colors duration-300 w-full relative cursor-pointer border-b"
-          onClick={toggleSubmenu}
-        >
-          <div className="flex items-center gap-1 justify-center">
-            <span className="flex gap-2 items-center text-sm">
-              <SiGnuprivacyguard size={12} />
-              SignUp
-            </span>
-            <FaChevronDown
-              size={12}
-              className={`transform transition-transform duration-300 ms-2 ${
-                showSubmenu ? "rotate-180" : "rotate-0"
-              }`}
-            />
-          </div>
-          {showSubmenu && (
-            <ul className="absolute left-[135px] top-0 mt-2 w-20 bg-white text-black shadow-lg z-30">
-              <li className="px-4 py-2 hover:bg-blue-400 hover:text-white transition-colors duration-300 border-b">
-                <Link
-                  to="/signup/seller"
-                  className="w-full block text-center text-sm"
-                >
-                  Seller
-                </Link>
-              </li>
-              <li className="px-2 py-2 hover:bg-blue-400 hover:text-white transition-colors duration-300">
-                <Link
-                  to="/signup/buyer"
-                  className="w-full block text-center text-sm"
-                >
-                  Buyer
-                </Link>
-              </li>
-            </ul>
-          )}
+        <li className="w-full rounded-b-lg">
+          <Link
+            to="/logout"
+            className="flex items-center space-x-3 py-3 px-4 hover:bg-blue-100 hover:text-blue-700 transition-colors duration-300 rounded-b-lg"
+          >
+            <SlLogout size={20} />
+            <span className="text-md font-normal">Log Out</span>
+          </Link>
         </li>
       </ul>
     </div>
   );
 };
+
 export default AccountDropdown;
