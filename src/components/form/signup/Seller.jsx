@@ -3,12 +3,12 @@ import React from "react";
 const Seller = () => {
   return (
     <div className="flex justify-center items-center my-20">
-      <div className="w-[80%] max-w-[700px] rounded-xl bg-white shadow-xl py-10 ">
+      <div className="px-5 md-px-0 w-[80%] md:max-w-[700px] rounded-xl bg-white shadow-xl md:py-10 ">
         <form
           action=""
           className="flex flex-col justify-center items-center md:px-24"
         >
-          <h2 className="text-2xl font-bold mb-14 font-mono">
+          <h2 className="text-lg md:text-2xl  font-bold mb-14 font-mono">
             Business Registration
           </h2>
 

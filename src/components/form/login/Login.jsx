@@ -15,12 +15,12 @@ const Login = () => {
     <div className="flex justify-center items-center min-h-screen bg-gray-100 py-20 ">
       <div className="flex w-[80%] max-w-[1000px] bg-white shadow-xl rounded-xl overflow-hidden ">
         <div
-          className="w-1/2 bg-cover bg-center text-white flex justify-center items-center text-xl"
+          className="w-1/2 bg-cover bg-center text-white hidden md:flex justify-center items-center text-xl"
           style={{ backgroundImage: `url(${backgroundImageUrl})` }}
         ></div>
         <form
           action=""
-          className="w-1/2 flex flex-col justify-center items-center px-10 py-32 "
+          className="md:w-1/2 flex flex-col justify-center items-center px-10 py-32 "
         >
           <h2 className="text-2xl font-bold mb-10 font-mono">SignIn</h2>
 

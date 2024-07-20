@@ -24,7 +24,7 @@ const Buyer = () => {
     <div className="flex justify-center items-center my-20">
       <form
         action=""
-        className="flex flex-col justify-center items-center px-28 w-[80%] max-w-[600px]  py-10 rounded-xl bg-white shadow-xl"
+        className="flex flex-col justify-center items-center px-5 md:px-28 w-[80%] max-w-[600px]  py-10 rounded-xl bg-white shadow-xl"
       >
         <h2 className="text-2xl font-bold mb-4 font-mono">SignUp</h2>
 
