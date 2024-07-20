@@ -1,34 +1,34 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { FaChevronDown } from "react-icons/fa";
-// import { FaRegUser } from "react-icons/fa";
-// import { TbLogin2, TbLogout2 } from "react-icons/tb";
-// import { SiGnuprivacyguard } from "react-icons/si";
+import {
+  IoHelpCircleOutline,
+  IoClipboardOutline,
+  IoReturnDownBackOutline,
+} from "react-icons/io5";
+
+import { MdOutlinePolicy } from "react-icons/md";
+import { MdOutlineLocalShipping } from "react-icons/md";
 
 const Help = () => {
-  const [showSubmenu, setShowSubmenu] = useState(false);
-
-  const toggleSubmenu = () => {
-    setShowSubmenu(!showSubmenu);
-  };
   return (
-    <div className="absolute -right-40 md:mt-12 w-[250px] bg-white text-black shadow-lg z-20">
-      <ul className="flex flex-col justify-center items-center">
-        <li className="px-4 py-3 hover:bg-blue-400 hover:text-white transition-colors duration-300 w-full  border-b">
-          <Link to="/help" className="w-full block text-center text-sm">
-            <span className="flex gap-2 items-center ">Help Center</span>
+    <div className="absolute -right-40 md:mt-12 w-[250px] bg-gradient-to-r from-gray-50 to-white text-black shadow-xl rounded-lg z-20">
+      <ul className="flex flex-col">
+        <li className="px-4 py-3 hover:bg-blue-100 hover:text-blue-700 hover:rounded-lg transition-colors duration-300 w-full border-b border-gray-200">
+          <Link to="/help" className="flex items-center gap-2 text-md">
+            <IoHelpCircleOutline size={20} />
+            <span className="font-normal">Help Center</span>
           </Link>
         </li>
-        <li className="px-4 py-3 hover:bg-blue-400 hover:text-white transition-colors duration-300 w-full border-b">
-          <Link to="/order" className="w-full block text-center text-sm">
-            <span className="flex gap-2 items-center ">Track my order</span>
+        <li className="px-4 py-3 hover:bg-blue-100 hover:text-blue-700 transition-colors duration-300 w-full border-b border-gray-200">
+          <Link to="/order" className="flex items-center gap-2 text-md">
+            <MdOutlineLocalShipping size={20} />
+            <span className="font-normal">Track my order</span>
           </Link>
         </li>
-        <li className="px-4 py-3 hover:bg-blue-400 hover:text-white transition-colors duration-300 w-full border-b">
-          <Link to="/policy" className="w-full block text-center text-sm">
-            <span className="flex gap-2 items-center ">
-              ShopEzzy return policy
-            </span>
+        <li className="px-4 py-3 hover:bg-blue-100 hover:text-blue-700 transition-colors duration-300 w-full rounded-b-lg">
+          <Link to="/policy" className="flex items-center gap-2 text-md">
+            <MdOutlinePolicy size={20} />
+            <span className="font-normal">ShopEzzy return policy</span>
           </Link>
         </li>
       </ul>

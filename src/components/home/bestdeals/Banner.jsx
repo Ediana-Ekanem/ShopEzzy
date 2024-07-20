@@ -32,7 +32,7 @@ const Banner = () => {
             <div className="w-20- h-20">
               <img src={payment} alt="payment-logo" className="w-full h-full" />
             </div>
-            <p className="font-semibold">Easy/safe Payment Goods</p>
+            <p className="font-semibold">Easy/Safe Payment Goods</p>
           </div>
           <div className="flex flex-col  items-center">
             <div className="w-20- h-20">
