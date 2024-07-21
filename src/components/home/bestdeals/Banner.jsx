@@ -7,6 +7,7 @@ import logistics from "/assets/icons/logistics.svg";
 import Container from "../../container/Container";
 import { FaPlusCircle } from "react-icons/fa";
 import { BiSolidMessageSquareAdd } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
   return (
@@ -14,19 +15,23 @@ const Banner = () => {
       <Container>
         <div className="flex justify-between items-center py-5  ">
           <div className="flex flex-col items-center space-y-4">
-            <div className="flex flex-col items-center">
-              <BiSolidMessageSquareAdd className="text-red-600 text-2xl md:text-5xl" />
-              <p className="text-sm text-red-600 font-semibold mt-1">
-                Post Ads
-              </p>
-            </div>
+            <Link to="/post">
+              <div className="flex flex-col items-center ">
+                <BiSolidMessageSquareAdd className="text-blue-500 text-2xl md:text-6xl rounded-lg  border-4 border-blue-500 p-0 grid place-items-center" />
+                <p className="text-md text-blue-600  mt-1 font-Montserrat">
+                  Post Ads
+                </p>
+              </div>
+            </Link>
 
-            <div className="flex flex-col items-center">
-              <FaPlusCircle className="text-green-600 text-2xl md:text-5xl" />
-              <p className="text-sm text-green-600 font-semibold mt-1">
-                Post Items
-              </p>
-            </div>
+            <Link to="/post">
+              <div className="flex flex-col items-center ">
+                <FaPlusCircle className="text-green-600 text-2xl md:text-6xl  rounded-full border-4 border-green-600 p-1 grid place-items-center " />
+                <p className="text-md text-green-600  mt-1 font-Montserrat">
+                  Post Items
+                </p>
+              </div>
+            </Link>
           </div>
           <div className="flex flex-col  items-center">
             <div className="w-8 md:w-20">

@@ -6,7 +6,7 @@ import { MdOutlineLocalShipping } from "react-icons/md";
 
 const Help = () => {
   return (
-    <div className="absolute md:-right-40 md:mt-12 w-[250px] bg-gradient-to-r from-gray-50 to-white text-black shadow-xl rounded-lg z-20">
+    <div className="absolute md:-right-20 md:mt-12 w-[250px] bg-gradient-to-r from-gray-50 to-white text-black shadow-xl rounded-lg z-20">
       <ul className="flex flex-col">
         <li className="px-4 py-3 hover:bg-blue-100 hover:text-blue-700 hover:rounded-lg transition-colors duration-300 w-full border-b border-gray-200">
           <Link to="/help" className="flex items-center gap-2 text-md">
