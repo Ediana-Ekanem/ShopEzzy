@@ -2,6 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.bg-gradient-custom {
-  background: linear-gradient(to right, #ffd166, #ffc84d, #93c5fd, #a5d8ff);
+.text-shadow-custom {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }

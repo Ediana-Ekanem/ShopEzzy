@@ -1,6 +1,7 @@
 import React from "react";
 import Carousel from "./Carousel";
 import Category from "../category/Category";
+import Container from "../../container/Container";
 
 const HeroSection = () => {
   const bannerOne =
@@ -11,39 +12,41 @@ const HeroSection = () => {
     "https://res.cloudinary.com/dminu0vmy/image/upload/v1721297145/eyfvwtex6qauwenz3ldw.png";
 
   return (
-    <div className="md:flex justify-between">
-      <div className="flex flex-col flex-[1_0_33%] order-1 md:order-2 px-3">
-        <div>
-          <Carousel />
+    <Container>
+      <div className="flex flex-col md:flex-row justify-between my-5">
+        <div className="flex flex-col flex-grow order-2 md:order-1 items-center justify-center">
+          <Category />
         </div>
-        <div className="hidden md:flex justify-between">
-          <div className="w-[400px] h-[300px]">
-            <img
-              src={bannerOne}
-              alt="Description"
-              className="w-full h-full object-cover rounded-lg"
-            />
+        <div className="flex flex-col flex-grow-[2] order-1 md:order-2 px-3">
+          <div>
+            <Carousel />
           </div>
-          <div className="w-[400px] h-[300px]">
-            <img
-              src={bannerTwo}
-              alt="Description"
-              className="w-full h-full object-cover rounded-lg"
-            />
-          </div>
-          <div className="w-[400px] h-[300px]">
-            <img
-              src={bannerThree}
-              alt="Description"
-              className="w-full h-full object-cover rounded-lg"
-            />
+          <div className="hidden md:flex justify-between mt-3 space-x-2">
+            <div className="w-full md:w-1/3 ">
+              <img
+                src={bannerOne}
+                alt="Description"
+                className="w-full h-full object-cover rounded-lg"
+              />
+            </div>
+            <div className="w-full md:w-1/3 ">
+              <img
+                src={bannerTwo}
+                alt="Description"
+                className="w-full h-full object-cover rounded-lg"
+              />
+            </div>
+            <div className="w-full md:w-1/3 ">
+              <img
+                src={bannerThree}
+                alt="Description"
+                className="w-full h-full object-cover rounded-lg"
+              />
+            </div>
           </div>
         </div>
       </div>
-      <div className="flex flex-col items-center justify-center flex-grow order-2 md:order-1 ">
-        <Category />
-      </div>
-    </div>
+    </Container>
   );
 };
 
