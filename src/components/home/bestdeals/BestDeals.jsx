@@ -83,21 +83,25 @@ const BestDeals = () => {
     <div>
       <Banner />
       <Container>
-        <div className="grid grid-cols-6 gap-5 my-20">
-          {bestDeal.map((item) => (
-            <Link to={item.link} key={item.id}>
-              <div className="transition-all duration-300 rounded shadow hover:transform hover:scale-105 border border-gray-200">
-                <div className="w-full h-44 rounded-t overflow-hidden">
-                  <img
-                    src={item.url}
-                    alt={item.title}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <h3 className="text-center p-2 text-sm font-Roboto">
-                  {item.title}
-                </h3>
+        <div className="grid md:grid-cols-6 gap-5 my-10 md:my-20">
+          {bestDeal.map((item, index) => (
+            <Link
+              to={item.link}
+              key={item.id}
+              className={`${
+                index >= 6 ? "hidden md:block" : ""
+              } transition-all duration-300 rounded shadow hover:transform hover:scale-105 border border-gray-200`}
+            >
+              <div className="w-full h-44 rounded-t overflow-hidden">
+                <img
+                  src={item.url}
+                  alt={item.title}
+                  className="w-full h-full object-cover"
+                />
               </div>
+              <h3 className="text-center p-2 text-sm font-Roboto">
+                {item.title}
+              </h3>
             </Link>
           ))}
         </div>
