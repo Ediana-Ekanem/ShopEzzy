@@ -23,6 +23,7 @@ import Pet from "./pages/category/Pet";
 import Office from "./pages/category/Office";
 import Furniture from "./pages/deals/Furniture";
 import Post from "./pages/Post";
+import PhoneTabsPage from "./pages/items/phonetabs/PhoneTabsPage";
 
 function App() {
   return (
@@ -52,6 +53,7 @@ function App() {
         <Route path="/office" element={<Office />} />
         <Route path="/furniture-deals" element={<Furniture />} />
         <Route path="/post" element={<Post />} />
+        <Route path="/phone-table-deals" element={<PhoneTabsPage />} />
       </Routes>
 
       <Footer />

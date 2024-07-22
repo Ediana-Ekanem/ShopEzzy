@@ -1,5 +1,7 @@
 import React from "react";
 import Container from "../../container/Container";
+import Card from "../../card/Card";
+import { RecData } from "./data";
 
 const RecDeals = () => {
   return (
@@ -24,7 +26,9 @@ const RecDeals = () => {
           </div>
         </div>
 
-        <div></div>
+        <div>
+          <Card data={RecData} />
+        </div>
       </Container>
     </div>
   );
