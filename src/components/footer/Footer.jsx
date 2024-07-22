@@ -24,7 +24,7 @@ const Footer = () => {
             <li className="mt-4 text-slate-700 hover:text-orange-500"><Link className="link" to="/fashion">Fashion</Link></li>
             <li className="mt-4 text-slate-700 hover:text-orange-500"><Link className="link" to="/groceries">Groceries</Link></li>
             <li className="mt-4 text-slate-700 hover:text-orange-500"><Link className="link" to="/sports">Sports</Link></li>
-            <li className="mt-4 text-slate-700 hover:text-orange-500"><Link className="link" to="/toy">Toy</Link></li>
+            <li className="mt-4 text-slate-700 hover:text-orange-500"><Link className="link" to="/toy">Toys</Link></li>
             <li className="mt-4 text-slate-700 hover:text-orange-500"><Link className="link" to="/babies">Babies</Link></li>
           </nav>
         </div>
