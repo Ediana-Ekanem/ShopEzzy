@@ -41,7 +41,7 @@ const Footer = () => {
           <h3 className="mt-6">Newsletter</h3>
           <p className="mt-2 text-sm text-slate-700">Receive product news and updates<br />in your inbox.</p>
           <input className="mt-4 border-b-4 border-white-600 border-0 w-full md:text-white md:bg-transparent" type="email" placeholder='Enter Your Email Address' />
-          <button className=" mt-2 bg-slate-700 w-full hover:bg-orange-500 rounded-full">Subscribe</button>
+          <button className=" mt-2 bg-slate-700 w-full hover:bg-orange-500 rounded-full" type="submit">Subscribe</button>
         </div>
       </div>
       <hr />
