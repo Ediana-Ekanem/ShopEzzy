@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaChevronDown } from "react-icons/fa";
+import { FaChevronDown, FaShoppingCart } from "react-icons/fa";
 import { MdOutlineHelp } from "react-icons/md";
-import { FaShoppingCart } from "react-icons/fa";
 import logo from "/assets/icons/logo.svg";
 import SearchBar from "../searchbar/SearchBar";
 import AccountDropdown from "../dropdown/AccountDropdown";
 import Help from "../dropdown/Help";
+import { useRecoilValue } from "recoil";
+import { cartCountState } from "../../atoms/cartState";
 
 const Desktop = ({
   isAccountDropdownVisible,
@@ -15,6 +16,8 @@ const Desktop = ({
   toggleHelpDropdown,
   closeDropdowns,
 }) => {
+  const cartCount = useRecoilValue(cartCountState);
+
   return (
     <nav className="hidden md:flex text-lg items-center justify-between">
       <div className="flex gap-5 items-center">
@@ -31,13 +34,10 @@ const Desktop = ({
         <li className="hover:text-blue-500 transition-all">
           <Link to="/">Home</Link>
         </li>
-        {/* <li className=" hover:text-blue-500 transition-all">
-          <Link to="shop">Shop</Link>
-        </li> */}
         <div className="relative">
           <li
             onClick={toggleAccountDropdown}
-            className="cursor-pointer flex items-center gap-1  hover:text-blue-500 transition-all"
+            className="cursor-pointer flex items-center gap-1 hover:text-blue-500 transition-all"
           >
             <span>Account</span>
             <FaChevronDown
@@ -46,7 +46,6 @@ const Desktop = ({
               }`}
             />
           </li>
-
           {isAccountDropdownVisible && (
             <div className="relative z-10">
               <AccountDropdown />
@@ -54,21 +53,18 @@ const Desktop = ({
             </div>
           )}
         </div>
-
         <div className="relative">
           <li
             onClick={toggleHelpDropdown}
-            className="cursor-pointer flex items-center gap-1  hover:text-blue-500 transition-all"
+            className="cursor-pointer flex items-center gap-1 hover:text-blue-500 transition-all"
           >
             <MdOutlineHelp size={25} />
-            {/* <span>Help</span> */}
             <FaChevronDown
               className={`transform transition-transform duration-300 ${
                 isHelpDropdownVisible ? "rotate-180" : "rotate-0"
               }`}
             />
           </li>
-
           {isHelpDropdownVisible && (
             <div className="relative z-10">
               <Help />
@@ -76,9 +72,14 @@ const Desktop = ({
             </div>
           )}
         </div>
-        <li className=" hover:text-blue-500 transition-all">
-          <Link to="cart">
+        <li className="relative hover:text-blue-500 transition-all">
+          <Link to="/cart">
             <FaShoppingCart size={25} />
+            {cartCount > 0 && (
+              <span className="absolute bottom-2 left-5 inline-flex items-center justify-center px-2 py-1 text-md font-bold leading-none text-blue-500 ">
+                {cartCount}
+              </span>
+            )}
           </Link>
         </li>
       </ul>

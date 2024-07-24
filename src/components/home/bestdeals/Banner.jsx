@@ -15,7 +15,7 @@ const Banner = () => {
       <Container>
         <div className="flex justify-between items-center py-5  ">
           <div className="flex flex-col items-center space-y-4">
-            <Link to="/post">
+            <Link to="/postAd">
               <div className="flex flex-col items-center ">
                 <BiSolidMessageSquareAdd className="text-blue-500 text-2xl md:text-6xl rounded-lg  border-4 border-blue-500 p-0 grid place-items-center" />
                 <p className="text-md text-blue-600  mt-1 font-Montserrat">
@@ -24,7 +24,7 @@ const Banner = () => {
               </div>
             </Link>
 
-            <Link to="/post">
+            <Link to="/postItems">
               <div className="flex flex-col items-center ">
                 <FaPlusCircle className="text-green-600 text-2xl md:text-6xl  rounded-full border-4 border-green-600 p-1 grid place-items-center " />
                 <p className="text-md text-green-600  mt-1 font-Montserrat">

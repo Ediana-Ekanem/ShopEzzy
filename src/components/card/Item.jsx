@@ -1,6 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
+import { useCart } from "../cart/useCart"; // Adjust the path as needed
 
 const Item = ({ data }) => {
+  const { addToCart } = useCart();
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 my-10">
       {data.map((item) => (
@@ -8,7 +12,10 @@ const Item = ({ data }) => {
           key={item.id}
           className="group flex flex-col w-[280px] h-[350px] bg-white shadow px-6 relative hover:shadow-md"
         >
-          <div className="flex justify-center items-center w-full h-52 overflow-hidden my-4 py-2">
+          <Link
+            to={`/mobile-gadgets/${item.id}`}
+            className="flex justify-center items-center w-full h-52 overflow-hidden my-2 py-2"
+          >
             <img
               src={item.img}
               alt={item.title}
@@ -19,15 +26,20 @@ const Item = ({ data }) => {
                 {item.discountTag}
               </p>
             )}
-          </div>
+          </Link>
           <h3 className="text-lg font-bold mt-2">{item.title}</h3>
-          <div className="flex gap-3">
+          <div className="flex items-center space-x-10">
+            <p className="text-lg font-semibold text-gray-800">
+              #{item.currentAmt}
+            </p>
             <p className="text-sm text-red-600 line-through">#{item.prevAmt}</p>
-            <p className="text-sm text-gray-800">#{item.currentAmt}</p>
           </div>
 
           <div>
-            <button className="hidden mt-1 group-hover:flex justify-center items-center w-full py-2 bg-blue-600 text-white transition-opacity duration-300">
+            <button
+              className="hidden mt-1 group-hover:flex justify-center items-center w-full py-2 bg-blue-500 text-white transition-opacity duration-300"
+              onClick={() => addToCart(item)}
+            >
               Add to Cart
             </button>
           </div>

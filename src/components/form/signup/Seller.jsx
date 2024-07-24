@@ -1,14 +1,57 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Seller = () => {
+  const [formData, setFormData] = useState({
+    businessName: "",
+    businessAddress: "",
+    homeAddress: "",
+    cacNumber: "",
+    businessCategory: "",
+    email: "",
+    phoneNumber: "",
+  });
+  const [errors, setErrors] = useState({});
+
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormData({ ...formData, [id]: value });
+  };
+
+  const validate = () => {
+    let newErrors = {};
+    if (!formData.businessName)
+      newErrors.businessName = "Business Name is required";
+    if (!formData.businessAddress)
+      newErrors.businessAddress = "Business Address is required";
+    if (!formData.homeAddress)
+      newErrors.homeAddress = "Home Address is required";
+    if (!formData.businessCategory)
+      newErrors.businessCategory = "Business Category is required";
+    if (!formData.email) newErrors.email = "Email Address is required";
+    if (!formData.phoneNumber)
+      newErrors.phoneNumber = "Phone Number is required";
+    return newErrors;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const newErrors = validate();
+    if (Object.keys(newErrors).length === 0) {
+      // Submit the form data to your backend or API
+      console.log("Form Data Submitted:", formData);
+    } else {
+      setErrors(newErrors);
+    }
+  };
+
   return (
     <div className="flex justify-center items-center my-20">
-      <div className="px-5 md-px-0 w-[80%] md:max-w-[700px] rounded-xl bg-white shadow-xl md:py-10 ">
+      <div className="px-5 md:px-0 w-[80%] md:max-w-[700px] rounded-xl bg-white shadow-xl md:py-10">
         <form
-          action=""
+          onSubmit={handleSubmit}
           className="flex flex-col justify-center items-center md:px-24"
         >
-          <h2 className="text-lg md:text-2xl  font-bold mb-14 font-mono">
+          <h2 className="text-lg md:text-2xl font-bold mb-14 font-mono">
             Business Registration
           </h2>
 
@@ -23,8 +66,15 @@ const Seller = () => {
               id="businessName"
               type="text"
               placeholder="Business Name"
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              value={formData.businessName}
+              onChange={handleChange}
+              className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
+                errors.businessName && "border-red-500"
+              }`}
             />
+            {errors.businessName && (
+              <p className="text-red-500 text-xs mt-2">{errors.businessName}</p>
+            )}
           </div>
 
           <div className="w-full mb-4">
@@ -38,8 +88,17 @@ const Seller = () => {
               id="businessAddress"
               type="text"
               placeholder="Business Address"
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              value={formData.businessAddress}
+              onChange={handleChange}
+              className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
+                errors.businessAddress && "border-red-500"
+              }`}
             />
+            {errors.businessAddress && (
+              <p className="text-red-500 text-xs mt-2">
+                {errors.businessAddress}
+              </p>
+            )}
           </div>
 
           <div className="w-full mb-4">
@@ -53,8 +112,15 @@ const Seller = () => {
               id="homeAddress"
               type="text"
               placeholder="Home Address"
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              value={formData.homeAddress}
+              onChange={handleChange}
+              className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
+                errors.homeAddress && "border-red-500"
+              }`}
             />
+            {errors.homeAddress && (
+              <p className="text-red-500 text-xs mt-2">{errors.homeAddress}</p>
+            )}
           </div>
 
           <div className="w-full mb-4">
@@ -68,6 +134,8 @@ const Seller = () => {
               id="cacNumber"
               type="text"
               placeholder="CAC Number"
+              value={formData.cacNumber}
+              onChange={handleChange}
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             />
           </div>
@@ -81,7 +149,11 @@ const Seller = () => {
             </label>
             <select
               id="businessCategory"
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              value={formData.businessCategory}
+              onChange={handleChange}
+              className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
+                errors.businessCategory && "border-red-500"
+              }`}
             >
               <option value="">Select Category</option>
               <option value="Retail">Retail</option>
@@ -91,6 +163,11 @@ const Seller = () => {
               <option value="Finance">Finance</option>
               <option value="Education">Education</option>
             </select>
+            {errors.businessCategory && (
+              <p className="text-red-500 text-xs mt-2">
+                {errors.businessCategory}
+              </p>
+            )}
           </div>
 
           <div className="w-full mb-4">
@@ -104,8 +181,15 @@ const Seller = () => {
               id="email"
               type="email"
               placeholder="Email Address"
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              value={formData.email}
+              onChange={handleChange}
+              className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
+                errors.email && "border-red-500"
+              }`}
             />
+            {errors.email && (
+              <p className="text-red-500 text-xs mt-2">{errors.email}</p>
+            )}
           </div>
 
           <div className="w-full mb-4">
@@ -115,14 +199,19 @@ const Seller = () => {
             >
               Phone Number
             </label>
-            <div className="flex">
-              <input
-                id="phoneNumber"
-                type="tel"
-                placeholder="Phone Number"
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              />
-            </div>
+            <input
+              id="phoneNumber"
+              type="tel"
+              placeholder="Phone Number"
+              value={formData.phoneNumber}
+              onChange={handleChange}
+              className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline ${
+                errors.phoneNumber && "border-red-500"
+              }`}
+            />
+            {errors.phoneNumber && (
+              <p className="text-red-500 text-xs mt-2">{errors.phoneNumber}</p>
+            )}
           </div>
 
           <button

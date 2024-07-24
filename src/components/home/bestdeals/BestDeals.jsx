@@ -14,8 +14,8 @@ const BestDeals = () => {
     {
       id: 2,
       url: "https://res.cloudinary.com/dminu0vmy/image/upload/v1721343053/t5x7zs4zg5vkrdp4drjd.jpg",
-      title: "Phone and Table Deals",
-      link: "/phone-table-deals",
+      title: "Mobile Gadgets",
+      link: "/mobile-gadgets",
     },
     {
       id: 3,

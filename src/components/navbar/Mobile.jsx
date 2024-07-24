@@ -6,6 +6,9 @@ import logo from "/assets/icons/logo.svg";
 import SearchBar from "../searchbar/SearchBar";
 import AccountDropdown from "../dropdown/AccountDropdown";
 import Help from "../dropdown/Help";
+import { useRecoilValue } from "recoil";
+import { cartCountState } from "../../atoms/cartState";
+import Container from "../container/Container";
 
 const Mobile = ({
   isAccountDropdownVisible,
@@ -15,6 +18,7 @@ const Mobile = ({
   closeDropdowns,
 }) => {
   const [nav, setNav] = useState(false);
+  const cartCount = useRecoilValue(cartCountState);
 
   const handleClick = () => setNav(!nav);
 
@@ -27,25 +31,22 @@ const Mobile = ({
           </Link>
         </div>
         <div onClick={handleClick}>
-          {nav ? <FaTimes size={30} /> : <FaBars size={30} />}
+          {nav ? <FaTimes size={29} /> : <FaBars size={29} />}
         </div>
       </div>
 
       {nav && (
-        <div className="flex flex-col items-center bg-[#FEAB3A] text-white text-lg space-y-5">
+        <div className="flex flex-col items-center bg-[#FEAB3A] text-white text-lg space-y-5 mt-2">
           <div className="w-full flex justify-center py-2">
-            <SearchBar />
+            <Container>
+              <SearchBar />
+            </Container>
           </div>
           <ul className="flex flex-col gap-3 md:gap-5 items-center text-[16px]">
-            <li className=" hover:text-blue-500 transition-all">
+            <li className="hover:text-blue-500 transition-all">
               <Link to="/" onClick={handleClick}>
                 Home
               </Link>
-            </li>
-            <li className=" hover:text-blue-500 transition-all">
-              {/* <Link to="/shop" onClick={handleClick}>
-                Shop
-              </Link> */}
             </li>
             <div className="relative w-full">
               <li
@@ -59,10 +60,8 @@ const Mobile = ({
                   }`}
                 />
               </li>
-
               {isAccountDropdownVisible && <AccountDropdown isMobile={true} />}
             </div>
-
             <div className="relative w-full">
               <li
                 onClick={toggleHelpDropdown}
@@ -76,12 +75,20 @@ const Mobile = ({
                   }`}
                 />
               </li>
-
               {isHelpDropdownVisible && <Help isMobile={true} />}
             </div>
-            <li className=" hover:text-blue-500 transition-all">
-              <Link to="/cart" onClick={handleClick}>
+            <li className="relative hover:text-blue-500 transition-all">
+              <Link
+                to="/cart"
+                onClick={handleClick}
+                className="flex items-center"
+              >
                 <FaShoppingCart size={25} />
+                {cartCount > 0 && (
+                  <span className="absolute bottom-2 left-4  inline-flex items-center justify-center px-2 py-1 text-md font-bold leading-none text-blue-500 ">
+                    {cartCount}
+                  </span>
+                )}
               </Link>
             </li>
           </ul>

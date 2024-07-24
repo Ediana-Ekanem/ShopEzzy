@@ -22,8 +22,12 @@ import Babies from "./pages/category/Babies";
 import Pet from "./pages/category/Pet";
 import Office from "./pages/category/Office";
 import Furniture from "./pages/deals/Furniture";
-import Post from "./pages/Post";
-import PhoneTabsPage from "./pages/items/phonetabs/PhoneTabsPage";
+// import Post from "./pages/Post";
+import Checkout from "./components/checkout/Checkout";
+import PostAddForm from "./components/form/post/PostAddForm";
+import PostItemForm from "./components/form/post/PostItemForm";
+import MobileGadgets from "./components/home/bestdeals/mobilegadgets/MobileGadgets";
+import MobileGadDetails from "./components/home/bestdeals/mobilegadgets/MobileGadDetails";
 
 function App() {
   return (
@@ -52,8 +56,11 @@ function App() {
         <Route path="/pet" element={<Pet />} />
         <Route path="/office" element={<Office />} />
         <Route path="/furniture-deals" element={<Furniture />} />
-        <Route path="/post" element={<Post />} />
-        <Route path="/phone-table-deals" element={<PhoneTabsPage />} />
+        <Route path="/postAd" element={<PostAddForm />} />
+        <Route path="/postItems" element={<PostItemForm />} />
+        <Route path="/mobile-gadgets" element={<MobileGadgets />} />
+        <Route path="/mobile-gadgets/:id" element={<MobileGadDetails />} />
+        <Route path="/checkout" element={<Checkout />} />
       </Routes>
 
       <Footer />

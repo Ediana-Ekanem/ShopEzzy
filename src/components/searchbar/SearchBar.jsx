@@ -2,26 +2,52 @@ import React, { useState } from "react";
 import { CiSearch } from "react-icons/ci";
 
 const SearchBar = () => {
-  const [showSearch, setShowSearch] = useState(false);
+  const [searchValue, setSearchValue] = useState("");
 
-  const handleIconClick = () => {
-    setShowSearch(!showSearch);
+  const handleInputChange = (e) => {
+    setSearchValue(e.target.value);
   };
+
+  const handleCancelClick = () => {
+    setSearchValue("");
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    if (searchValue.trim()) {
+      // Conduct search here
+      console.log("Search conducted with:", searchValue);
+      // Add your search logic here
+    }
+  };
+
   return (
-    <>
-      <form className="flex items-center justify-center ">
-        <CiSearch size={25} onClick={handleIconClick} />
-        {showSearch && (
-          <div className="w-80">
-            <input
-              type="text"
-              className=" w-full rounded-md  md:rounded-none py-2 border-0 border-b text-black md:text-white bg-white md:bg-transparent  md:border-white focus:outline-none focus:ring-0 focus:border-white ps-3 md:ps-0 ms-2 text-sm"
-              placeholder=""
-            />
+    <form
+      className="flex items-center justify-center rounded-2xl border border-white bg-transparent"
+      onSubmit={handleFormSubmit}
+    >
+      <div className="relative w-[450px] flex items-center">
+        <CiSearch size={18} className="absolute left-2 text-white" />
+        <input
+          type="text"
+          value={searchValue}
+          onChange={handleInputChange}
+          className="w-full pl-8 pr-10 py-[10px] rounded-2xl text-white bg-transparent focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm font-normal placeholder:text-sm placeholder:text-white"
+          placeholder="Search..."
+        />
+        {searchValue && (
+          <div className="absolute right-2 flex items-center justify-center w-6 h-6 rounded-full bg-gray-500">
+            <button
+              type="button"
+              onClick={handleCancelClick}
+              className="text-md font-medium text-white"
+            >
+              x
+            </button>
           </div>
         )}
-      </form>
-    </>
+      </div>
+    </form>
   );
 };
 

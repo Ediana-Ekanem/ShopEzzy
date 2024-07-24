@@ -4,7 +4,7 @@ import { TbCategoryFilled } from "react-icons/tb";
 
 const Category = () => {
   return (
-    <div className="bg-white py-10 shadow-2xl px-10 md:rounded-lg mt-10 md:mt-0">
+    <div className="bg-white py-10 shadow px-10 md:rounded-lg mt-10 md:mt-0">
       <nav className="text-slate-950 font-Montserrat">
         <div className="flex items-center gap-2 mb-10">
           <TbCategoryFilled />
