@@ -94,9 +94,16 @@ const BestDeals = () => {
             >
               <div className="w-full h-44 rounded-t overflow-hidden">
                 <img
-                  src={item.url}
+                  src={`${item.url}`}
+                  srcSet={`${item.url} 320w,
+                          ${item.url} 480w,
+                          ${item.url} 800w`}
+                  sizes="(max-width: 600px) 320px,
+                         (max-width: 960px) 480px,
+                         800px"
                   alt={item.title}
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
               </div>
               <h3 className="text-center p-2 text-sm font-Roboto">

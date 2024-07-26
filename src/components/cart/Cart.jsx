@@ -1,5 +1,3 @@
-// src/components/cart/Cart.js
-
 import React from "react";
 import { useRecoilValue } from "recoil";
 import { cartState } from "../../atoms/cartState";
@@ -8,11 +6,11 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 import Container from "../container/Container";
-// import Container from "../../components/container";
+import { IoArrowBackOutline } from "react-icons/io5";
 
 const Cart = () => {
   const cart = useRecoilValue(cartState);
-  const { incrementQuantity, decrementQuantity } = useCart();
+  const { incrementQuantity, decrementQuantity, removeFromCart } = useCart();
   const navigate = useNavigate();
 
   const calculateTotal = () => {
@@ -26,14 +24,19 @@ const Cart = () => {
     navigate("/checkout", { state: { cart } });
   };
 
+  const goBack = () => {
+    navigate(-1); // Navigate to the previous page
+  };
+
   return (
     <div>
       <ToastContainer />
-
-      <div className="md:flex my-10 bg-blue-400 rounded-t-md px-10 py-5">
+      <div className="md:flex my-10 bg-blue-400 rounded-t-md px-10 py-5 items-center">
+        <button className="text-white text-xl mr-4" onClick={goBack}>
+          <IoArrowBackOutline />
+        </button>
         <h3 className="text-2xl text-white font-semibold">Cart</h3>
       </div>
-
       <Container>
         {cart.length === 0 ? (
           <p className="flex justify-center text-lg">Your cart is empty</p>
@@ -52,7 +55,7 @@ const Cart = () => {
                       className="w-20 h-20 object-cover mr-4 rounded"
                     />
                     <div>
-                      <h4 className="text-lg font-semibold">{item.title}</h4>
+                      <h4 className="md:text-lg font-semibold">{item.title}</h4>
                       <p className="text-sm text-gray-600">
                         #{item.currentAmt} x {item.quantity}
                       </p>
@@ -79,9 +82,20 @@ const Cart = () => {
                       </div>
                     </div>
                   </div>
-                  <p className="text-lg font-semibold">
-                    #{item.currentAmt * item.quantity}
-                  </p>
+                  <div className="flex items-center">
+                    <p className="md:text-lg font-semibold">
+                      #{item.currentAmt * item.quantity}
+                    </p>
+                    <button
+                      className="ml-4 px-2 py-1 text-red-500 md:text-2xl font-semibold"
+                      onClick={(e) => {
+                        e.stopPropagation(); // Prevents click event from triggering the item click
+                        removeFromCart(item.id);
+                      }}
+                    >
+                      X
+                    </button>
+                  </div>
                 </li>
               ))}
             </ul>

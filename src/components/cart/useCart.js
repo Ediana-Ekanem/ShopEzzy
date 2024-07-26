@@ -49,5 +49,16 @@ export const useCart = () => {
     );
   };
 
-  return { cart, addToCart, incrementQuantity, decrementQuantity };
+  const removeFromCart = (itemId) => {
+    setCart((oldCart) => oldCart.filter((item) => item.id !== itemId));
+    toast.error("Item removed from cart!");
+  };
+
+  return {
+    cart,
+    addToCart,
+    incrementQuantity,
+    decrementQuantity,
+    removeFromCart,
+  };
 };

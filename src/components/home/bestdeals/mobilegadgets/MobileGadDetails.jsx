@@ -18,11 +18,11 @@ const MobileGadDetails = () => {
     <div className="container mx-auto px-4 py-8">
       <div className="md:flex md:space-x-8">
         {/* Image Section */}
-        <div className="w-full md:w-1/2">
+        <div className="w-full md:w-1/2 flex justify-center">
           <img
             src={item.img}
             alt={item.title}
-            className="w-full h-auto object-cover rounded-lg shadow-lg"
+            className="max-w-full max-h-96 object-cover rounded-lg shadow-lg"
           />
         </div>
 
@@ -49,10 +49,12 @@ const MobileGadDetails = () => {
             </div>
           </div>
 
-          <p className="text-lg font-semibold text-gray-800 mb-2">Price:</p>
-          <p className="text-2xl font-bold text-gray-900 mb-2">
-            #{item.currentAmt}
-          </p>
+          <div className="flex  space-x-3">
+            <p className="text-lg font-semibold text-gray-800 mb-2">Price:</p>
+            <p className="text-2xl font-bold text-gray-900 mb-2">
+              #{item.currentAmt}
+            </p>
+          </div>
           <p className="text-sm text-red-600 line-through mb-4">
             #{item.prevAmt}
           </p>
@@ -67,9 +69,6 @@ const MobileGadDetails = () => {
               onClick={() => addToCart(item)}
             >
               Add to Cart
-            </button>
-            <button className="bg-gray-200 text-gray-800 py-2 px-6 rounded-lg shadow-md hover:bg-gray-300 transition-colors">
-              Add to Wishlist
             </button>
           </div>
         </div>

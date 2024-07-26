@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -38,15 +40,23 @@ const Login = () => {
   };
 
   const backgroundImageUrl =
-    "https://res.cloudinary.com/dminu0vmy/image/upload/v1721479467/apx3oodt6laswn5qzgwq.jpg";
+    "https://res.cloudinary.com/dminu0vmy/image/upload/f_auto,q_auto/apx3oodt6laswn5qzgwq.jpg";
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100 py-20">
       <div className="flex w-[80%] max-w-[1000px] bg-white shadow-xl rounded-xl overflow-hidden">
-        <div
-          className="w-1/2 bg-cover bg-center text-white hidden md:flex justify-center items-center text-xl"
-          style={{ backgroundImage: `url(${backgroundImageUrl})` }}
-        ></div>
+        <div className="w-1/2 relative hidden md:flex justify-center items-center text-xl">
+          <div className="absolute inset-0 bg-gray-200"></div>{" "}
+          {/* Placeholder background */}
+          <LazyLoadImage
+            alt="Background"
+            effect="blur"
+            src={backgroundImageUrl}
+            className="w-full h-full object-cover"
+            width="100%"
+            height="100%"
+          />
+        </div>
         <form
           onSubmit={handleSubmit}
           className="md:w-1/2 flex flex-col justify-center items-center px-10 py-32"

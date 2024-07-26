@@ -1,8 +1,8 @@
+import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Footer from "./components/footer/Footer";
 import Navbar from "./components/navbar/Navbar";
 import Home from "./pages/Home";
-// import Shop from "./pages/Shop";
 import Profile from "./pages/Profile";
 import Login from "./pages/Login";
 import Buyer from "./pages/Buyer";
@@ -22,7 +22,6 @@ import Babies from "./pages/category/Babies";
 import Pet from "./pages/category/Pet";
 import Office from "./pages/category/Office";
 import Furniture from "./pages/deals/Furniture";
-// import Post from "./pages/Post";
 import Checkout from "./components/checkout/Checkout";
 import PostAddForm from "./components/form/post/PostAddForm";
 import PostItemForm from "./components/form/post/PostItemForm";
@@ -31,40 +30,39 @@ import MobileGadDetails from "./components/home/bestdeals/mobilegadgets/MobileGa
 
 function App() {
   return (
-    <>
+    <div className="flex flex-col min-h-screen">
       <Navbar />
-
-      <Routes>
-        <Route path="/" element={<Home />} />
-        {/* <Route path="/shop" element={<Shop />} /> */}
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup/buyer" element={<Buyer />} />
-        <Route path="/signup/seller" element={<Seller />} />
-        <Route path="/help" element={<HelpCenter />} />
-        <Route path="/order" element={<TrackOrder />} />
-        <Route path="/policy" element={<Policy />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/electronic" element={<Electronic />} />
-        <Route path="/fashion" element={<Fashion />} />
-        <Route path="/health" element={<Health />} />
-        <Route path="/sports" element={<Sports />} />
-        <Route path="/toys" element={<Toy />} />
-        <Route path="/books" element={<Books />} />
-        <Route path="/groceries" element={<Groceries />} />
-        <Route path="/babies" element={<Babies />} />
-        <Route path="/pet" element={<Pet />} />
-        <Route path="/office" element={<Office />} />
-        <Route path="/furniture-deals" element={<Furniture />} />
-        <Route path="/postAd" element={<PostAddForm />} />
-        <Route path="/postItems" element={<PostItemForm />} />
-        <Route path="/mobile-gadgets" element={<MobileGadgets />} />
-        <Route path="/mobile-gadgets/:id" element={<MobileGadDetails />} />
-        <Route path="/checkout" element={<Checkout />} />
-      </Routes>
-
+      <div className="flex-grow">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup/buyer" element={<Buyer />} />
+          <Route path="/signup/seller" element={<Seller />} />
+          <Route path="/help" element={<HelpCenter />} />
+          <Route path="/order" element={<TrackOrder />} />
+          <Route path="/policy" element={<Policy />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/electronic" element={<Electronic />} />
+          <Route path="/fashion" element={<Fashion />} />
+          <Route path="/health" element={<Health />} />
+          <Route path="/sports" element={<Sports />} />
+          <Route path="/toys" element={<Toy />} />
+          <Route path="/books" element={<Books />} />
+          <Route path="/groceries" element={<Groceries />} />
+          <Route path="/babies" element={<Babies />} />
+          <Route path="/pet" element={<Pet />} />
+          <Route path="/office" element={<Office />} />
+          <Route path="/furniture-deals" element={<Furniture />} />
+          <Route path="/postAd" element={<PostAddForm />} />
+          <Route path="/postItems" element={<PostItemForm />} />
+          <Route path="/mobile-gadgets" element={<MobileGadgets />} />
+          <Route path="/mobile-gadgets/:id" element={<MobileGadDetails />} />
+          <Route path="/checkout" element={<Checkout />} />
+        </Routes>
+      </div>
       <Footer />
-    </>
+    </div>
   );
 }
 
