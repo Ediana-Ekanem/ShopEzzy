@@ -1,3 +1,4 @@
+// App.js
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Footer from "./components/footer/Footer";
@@ -27,6 +28,8 @@ import PostAddForm from "./components/form/post/PostAddForm";
 import PostItemForm from "./components/form/post/PostItemForm";
 import MobileGadgets from "./components/home/bestdeals/mobilegadgets/MobileGadgets";
 import MobileGadDetails from "./components/home/bestdeals/mobilegadgets/MobileGadDetails";
+import SellerLogin from "./components/form/login/SellerLogin";
+import ProtectedRoute from "./auth/ProtectedRoute";
 
 function App() {
   return (
@@ -54,11 +57,18 @@ function App() {
           <Route path="/pet" element={<Pet />} />
           <Route path="/office" element={<Office />} />
           <Route path="/furniture-deals" element={<Furniture />} />
-          <Route path="/postAd" element={<PostAddForm />} />
-          <Route path="/postItems" element={<PostItemForm />} />
+          <Route
+            path="/postAd"
+            element={<ProtectedRoute element={<PostAddForm />} />}
+          />
+          <Route
+            path="/postItems"
+            element={<ProtectedRoute element={<PostItemForm />} />}
+          />
           <Route path="/mobile-gadgets" element={<MobileGadgets />} />
           <Route path="/mobile-gadgets/:id" element={<MobileGadDetails />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/seller-login" element={<SellerLogin />} />
         </Routes>
       </div>
       <Footer />

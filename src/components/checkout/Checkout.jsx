@@ -53,7 +53,7 @@ const Checkout = () => {
 
       <Container>
         <div className="flex flex-col items-center my-10">
-          <p className="text-lg mb-4 font-mono">
+          <p className="text-xl mb-10 font-mono">
             Please review your items and proceed with the payment
           </p>
 
