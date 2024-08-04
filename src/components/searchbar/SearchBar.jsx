@@ -13,7 +13,9 @@ const SearchBar = ({ onSearch }) => {
 
   const handleCancelClick = () => {
     setSearchValue("");
-    onSearch(""); // Clear search value in parent component
+    onSearch("");
+
+    // Clear search value in parent component
   };
 
   const handleFormSubmit = (e) => {
