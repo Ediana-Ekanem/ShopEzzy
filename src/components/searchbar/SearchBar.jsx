@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { CiSearch } from "react-icons/ci";
+import { MdCancel } from "react-icons/md";
 
 const SearchBar = ({ onSearch }) => {
   const [searchValue, setSearchValue] = useState("");
@@ -7,7 +8,6 @@ const SearchBar = ({ onSearch }) => {
   const handleFilter = (e) => {
     const searchWord = e.target.value;
     setSearchValue(searchWord);
-    console.log(typeof onSearch); // Should log 'function'
     onSearch(searchWord);
   };
 
@@ -18,7 +18,6 @@ const SearchBar = ({ onSearch }) => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    // Optional: Implement any additional logic on form submit
   };
 
   return (
@@ -36,13 +35,13 @@ const SearchBar = ({ onSearch }) => {
           placeholder="Search..."
         />
         {searchValue && (
-          <div className="absolute right-2 flex items-center justify-center w-6 h-6 rounded-full bg-gray-500">
+          <div className="absolute right-2 flex items-center justify-center w-6 h-6 rounded-full">
             <button
               type="button"
               onClick={handleCancelClick}
               className="text-md font-medium text-white"
             >
-              x
+              <MdCancel size={20} />
             </button>
           </div>
         )}

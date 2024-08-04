@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import Container from "../container/Container";
 import { IoArrowBackOutline } from "react-icons/io5";
 import { FaStar } from "react-icons/fa"; // Import FaStar for displaying stars
+import { BsCart4 } from "react-icons/bs";
 
 const Cart = () => {
   const cart = useRecoilValue(cartState);
@@ -32,7 +33,7 @@ const Cart = () => {
   return (
     <div>
       <ToastContainer />
-      <div className="md:flex my-10 bg-blue-400 rounded-t-md px-10 py-5 items-center">
+      <div className="flex my-10 bg-blue-400 rounded-t-md px-10 py-5 items-center">
         <button className="text-white text-xl mr-4" onClick={goBack}>
           <IoArrowBackOutline />
         </button>
@@ -40,7 +41,19 @@ const Cart = () => {
       </div>
       <Container>
         {cart.length === 0 ? (
-          <p className="flex justify-center text-lg">Your cart is empty</p>
+          <div className="flex flex-col items-center my-3">
+            <div>
+              <BsCart4 size={60} className="text-blue-400" />
+            </div>
+            <div className="mt-5">
+              <h3 className="flex justify-center text-lg font-bold">
+                Your cart is empty.
+              </h3>
+              <p className="flex justify-center text-lg">
+                You have not added any item to your cart.
+              </p>
+            </div>
+          </div>
         ) : (
           <div className="flex flex-col">
             <ul className="mb-6">

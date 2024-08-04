@@ -3,12 +3,13 @@ import { Link } from "react-router-dom";
 import { FaChevronDown, FaShoppingCart, FaTimes, FaBars } from "react-icons/fa";
 import { MdOutlineHelp } from "react-icons/md";
 import logo from "/assets/icons/logo.svg";
-import SearchBar from "../searchbar/SearchBar";
+// import SearchBar from "../searchbar/SearchBar";
 import AccountDropdown from "../dropdown/AccountDropdown";
 import Help from "../dropdown/Help";
 import { useRecoilValue } from "recoil";
 import { cartCountState } from "../../atoms/cartState";
 import Container from "../container/Container";
+import SearchComponent from "../searchbar/SearchComponent";
 
 const Mobile = ({
   isAccountDropdownVisible,
@@ -39,7 +40,7 @@ const Mobile = ({
         <div className="flex flex-col items-center bg-[#FEAB3A] text-white text-lg space-y-5 mt-2">
           <div className="w-full flex justify-center py-2">
             <Container>
-              <SearchBar />
+              <SearchComponent />
             </Container>
           </div>
           <ul className="flex flex-col gap-3 md:gap-5 items-center text-[16px]">
