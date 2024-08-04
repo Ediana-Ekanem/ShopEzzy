@@ -4,6 +4,7 @@ import CheckoutModal from "./CheckoutModal";
 import CreditTransferForm from "../form/payment/CreditTransferForm";
 import BankTransferForm from "../form/payment/BankTransferForm";
 import Container from "../container/Container";
+import { FaStar } from "react-icons/fa"; // Import FaStar for displaying stars
 
 const Checkout = () => {
   const location = useLocation();
@@ -78,6 +79,19 @@ const Checkout = () => {
                         <p className="text-sm text-gray-600">
                           #{item.currentAmt} x {item.quantity}
                         </p>
+                        {/* Display the rating */}
+                        <div className="flex items-center mt-2">
+                          {[...Array(5)].map((_, index) => (
+                            <FaStar
+                              key={index}
+                              className={`w-5 h-5 ${
+                                index < item.rating
+                                  ? "text-yellow-400"
+                                  : "text-gray-300"
+                              }`}
+                            />
+                          ))}
+                        </div>
                       </div>
                     </div>
                     <p className="text-lg font-semibold">

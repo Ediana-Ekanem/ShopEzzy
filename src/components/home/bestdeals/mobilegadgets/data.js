@@ -6,6 +6,7 @@ export const GadgetData = [
     prevAmt: 100000,
     currentAmt: 95000,
     discountTag: "5%",
+    rating: 0,
   },
   {
     id: 2,
@@ -14,6 +15,7 @@ export const GadgetData = [
     prevAmt: 150000,
     currentAmt: 140000,
     discountTag: "7%",
+    rating: 4,
   },
   {
     id: 3,
@@ -22,6 +24,7 @@ export const GadgetData = [
     prevAmt: 120000,
     currentAmt: 110000,
     discountTag: "8%",
+    rating: 2,
   },
   {
     id: 4,
@@ -30,6 +33,7 @@ export const GadgetData = [
     prevAmt: 20000,
     currentAmt: 18000,
     discountTag: "10%",
+    rating: 1,
   },
   {
     id: 5,
@@ -38,6 +42,7 @@ export const GadgetData = [
     prevAmt: 200000,
     currentAmt: 180000,
     discountTag: "10%",
+    rating: 0,
   },
   {
     id: 6,
@@ -46,6 +51,7 @@ export const GadgetData = [
     prevAmt: 50000,
     currentAmt: 45000,
     discountTag: "5%",
+    rating: 3,
   },
   {
     id: 7,
@@ -54,6 +60,7 @@ export const GadgetData = [
     prevAmt: 90000,
     currentAmt: 85000,
     discountTag: "5%",
+    rating: 0,
   },
   {
     id: 8,
@@ -62,6 +69,7 @@ export const GadgetData = [
     prevAmt: 150000,
     currentAmt: 135000,
     discountTag: "10%",
+    rating: 2,
   },
   {
     id: 9,
@@ -70,6 +78,7 @@ export const GadgetData = [
     prevAmt: 80000,
     currentAmt: 75000,
     discountTag: "6%",
+    rating: 5,
   },
   {
     id: 10,
@@ -78,6 +87,7 @@ export const GadgetData = [
     prevAmt: 10000,
     currentAmt: 9000,
     discountTag: "10%",
+    rating: 0,
   },
   {
     id: 11,
@@ -86,6 +96,7 @@ export const GadgetData = [
     prevAmt: 300000,
     currentAmt: 250000,
     discountTag: "",
+    rating: 0,
   },
   {
     id: 12,
@@ -94,6 +105,7 @@ export const GadgetData = [
     prevAmt: 500000,
     currentAmt: 480500,
     discountTag: "7%",
+    rating: 0,
   },
   {
     id: 13,
@@ -118,6 +130,7 @@ export const GadgetData = [
     prevAmt: 400000,
     currentAmt: 35000,
     discountTag: "",
+    rating: 0,
   },
   {
     id: 16,
@@ -126,6 +139,7 @@ export const GadgetData = [
     prevAmt: 250000,
     currentAmt: 240000,
     discountTag: "8%",
+    rating: 0,
   },
   {
     id: 17,
@@ -142,6 +156,7 @@ export const GadgetData = [
     prevAmt: 250000,
     currentAmt: 180000,
     discountTag: "12%",
+    rating: 0,
   },
   {
     id: 19,
@@ -166,6 +181,7 @@ export const GadgetData = [
     prevAmt: 110000,
     currentAmt: 95000,
     discountTag: "15%",
+    rating: 0,
   },
   {
     id: 22,
@@ -174,6 +190,7 @@ export const GadgetData = [
     prevAmt: 300000,
     currentAmt: 270000,
     discountTag: "8%",
+    rating: 4,
   },
   {
     id: 23,
@@ -182,6 +199,7 @@ export const GadgetData = [
     prevAmt: 300000,
     currentAmt: 260000,
     discountTag: "4%",
+    rating: 2,
   },
   {
     id: 24,
@@ -190,6 +208,7 @@ export const GadgetData = [
     prevAmt: 250000,
     currentAmt: 280000,
     discountTag: "5%",
+    rating: 1,
   },
   {
     id: 25,
@@ -198,6 +217,7 @@ export const GadgetData = [
     prevAmt: 300000,
     currentAmt: 290000,
     discountTag: "7%",
+    rating: 2,
   },
 
   {
@@ -207,5 +227,6 @@ export const GadgetData = [
     prevAmt: 170000,
     currentAmt: 165000,
     discountTag: "6%",
+    rating: 4,
   },
 ];

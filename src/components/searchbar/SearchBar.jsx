@@ -1,24 +1,24 @@
 import React, { useState } from "react";
 import { CiSearch } from "react-icons/ci";
 
-const SearchBar = () => {
+const SearchBar = ({ onSearch }) => {
   const [searchValue, setSearchValue] = useState("");
 
-  const handleInputChange = (e) => {
-    setSearchValue(e.target.value);
+  const handleFilter = (e) => {
+    const searchWord = e.target.value;
+    setSearchValue(searchWord);
+    console.log(typeof onSearch); // Should log 'function'
+    onSearch(searchWord);
   };
 
   const handleCancelClick = () => {
     setSearchValue("");
+    onSearch(""); // Clear search value in parent component
   };
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    if (searchValue.trim()) {
-      // Conduct search here
-      console.log("Search conducted with:", searchValue);
-      // Add your search logic here
-    }
+    // Optional: Implement any additional logic on form submit
   };
 
   return (
@@ -31,7 +31,7 @@ const SearchBar = () => {
         <input
           type="text"
           value={searchValue}
-          onChange={handleInputChange}
+          onChange={handleFilter}
           className="w-full pl-8 pr-10 py-[10px] rounded-2xl text-white bg-transparent focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm font-normal placeholder:text-sm placeholder:text-white"
           placeholder="Search..."
         />
