@@ -6,11 +6,11 @@ const Item = ({ data, itemType }) => {
   const { addToCart } = useCart();
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 my-10">
+    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6  my-10">
       {data.map((item) => (
         <div
           key={item.id}
-          className="group flex flex-col w-[280px] h-[350px] bg-white shadow px-6 relative hover:shadow-md"
+          className="group flex flex-col ms-7 md:ms-0 w-[280px] h-[350px] bg-white shadow px-6 relative hover:shadow-md"
         >
           <Link
             to={`/${itemType}/${item.id}`}
