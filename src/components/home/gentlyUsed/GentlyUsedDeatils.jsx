@@ -1,17 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import { GadgetData } from "./data";
-import { useCart } from "../../../cart/useCart";
+import { GentlyUsedData } from "./data";
+import { useCart } from "../../cart/useCart";
 import { FaStar } from "react-icons/fa";
 
-const MobileGadDetails = () => {
+const GentlyUsedDetails = () => {
   const { id } = useParams();
   const { addToCart } = useCart();
-  const item = GadgetData.find((item) => item.id === parseInt(id));
+  const [items, setItems] = useState(GentlyUsedData);
+
+  const item = items.find((item) => item.id === parseInt(id));
 
   if (!item) {
     return <p className="text-center text-red-600 font-bold">Item not found</p>;
   }
+
+  const handleRatingChange = (index) => {
+    const newItems = items.map((it) => {
+      if (it.id === item.id) {
+        return {
+          ...it,
+          rating: index + 1,
+        };
+      }
+      return it;
+    });
+    setItems(newItems);
+  };
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -36,6 +51,8 @@ const MobileGadDetails = () => {
                   className={`w-5 h-5 ${
                     index < item.rating ? "text-yellow-400" : "text-gray-300"
                   }`}
+                  onClick={() => handleRatingChange(index)}
+                  style={{ cursor: "pointer" }}
                 />
               ))}
             </div>
@@ -69,4 +86,4 @@ const MobileGadDetails = () => {
   );
 };
 
-export default MobileGadDetails;
+export default GentlyUsedDetails;

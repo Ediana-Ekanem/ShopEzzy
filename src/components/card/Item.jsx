@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import { useCart } from "../cart/useCart"; // Adjust the path as needed
 
-const Item = ({ data }) => {
+const Item = ({ data, itemType }) => {
   const { addToCart } = useCart();
 
   return (
@@ -13,7 +13,7 @@ const Item = ({ data }) => {
           className="group flex flex-col w-[280px] h-[350px] bg-white shadow px-6 relative hover:shadow-md"
         >
           <Link
-            to={`/mobile-gadgets/${item.id}`}
+            to={`/${itemType}/${item.id}`}
             className="flex justify-center items-center w-full h-52 overflow-hidden my-2 py-2"
           >
             <img

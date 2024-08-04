@@ -7,6 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 import Container from "../container/Container";
 import { IoArrowBackOutline } from "react-icons/io5";
+import { FaStar } from "react-icons/fa"; // Import FaStar for displaying stars
 
 const Cart = () => {
   const cart = useRecoilValue(cartState);
@@ -60,6 +61,19 @@ const Cart = () => {
                         #{item.currentAmt} x {item.quantity}
                       </p>
                       <div className="flex items-center mt-2">
+                        {/* Display the rating */}
+                        <div className="flex items-center me-5">
+                          {[...Array(5)].map((_, index) => (
+                            <FaStar
+                              key={index}
+                              className={`w-4 h-4 ${
+                                index < item.rating
+                                  ? "text-yellow-400"
+                                  : "text-gray-300"
+                              }`}
+                            />
+                          ))}
+                        </div>
                         <button
                           className="px-2 py-1 bg-gray-200 text-gray-800 rounded hover:bg-gray-300"
                           onClick={(e) => {

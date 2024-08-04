@@ -1,8 +1,7 @@
-// App.js
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Footer from "./components/footer/Footer";
 import Navbar from "./components/navbar/Navbar";
+import Footer from "./components/footer/Footer";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Login from "./pages/Login";
@@ -30,6 +29,11 @@ import MobileGadgets from "./components/home/bestdeals/mobilegadgets/MobileGadge
 import MobileGadDetails from "./components/home/bestdeals/mobilegadgets/MobileGadDetails";
 import SellerLogin from "./components/form/login/SellerLogin";
 import ProtectedRoute from "./auth/ProtectedRoute";
+import GentlyUsed from "./components/home/gentlyUsed/GentlyUsed"; // Make sure to import this
+import GentlyUsedDetails from "./components/home/gentlyUsed/GentlyUsedDeatils";
+import RecDeals from "./components/home/recommended/RecDeals";
+import RecDealDetails from "./components/home/recommended/RecDealDeatils";
+import Logout from "./pages/Logout";
 
 function App() {
   return (
@@ -57,6 +61,8 @@ function App() {
           <Route path="/pet" element={<Pet />} />
           <Route path="/office" element={<Office />} />
           <Route path="/furniture-deals" element={<Furniture />} />
+          <Route path="/logout" element={<Logout />} />
+
           <Route
             path="/postAd"
             element={<ProtectedRoute element={<PostAddForm />} />}
@@ -67,6 +73,10 @@ function App() {
           />
           <Route path="/mobile-gadgets" element={<MobileGadgets />} />
           <Route path="/mobile-gadgets/:id" element={<MobileGadDetails />} />
+          <Route path="/rec-deals" element={<RecDeals />} />
+          <Route path="/rec-deals/:id" element={<RecDealDetails />} />
+          <Route path="/gently-used" element={<GentlyUsed />} />
+          <Route path="/gently-used/:id" element={<GentlyUsedDetails />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/seller-login" element={<SellerLogin />} />
         </Routes>
