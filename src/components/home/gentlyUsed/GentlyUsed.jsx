@@ -15,7 +15,7 @@ const GentlyUsed = () => {
             </h3>
           </div>
         </div>
-
+        {/* Checking  */}
         <div>
           <Item data={GentlyUsedData} itemType="gently-used" />
         </div>
