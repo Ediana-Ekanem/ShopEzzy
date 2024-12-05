@@ -3,11 +3,12 @@ import { Link } from "react-router-dom";
 import { FaChevronDown, FaShoppingCart } from "react-icons/fa";
 import { MdOutlineHelp } from "react-icons/md";
 import logo from "/assets/icons/logo.svg";
-import SearchBar from "../searchbar/SearchBar";
+// import SearchBar from "../searchbar/SearchBar";
 import AccountDropdown from "../dropdown/AccountDropdown";
 import Help from "../dropdown/Help";
 import { useRecoilValue } from "recoil";
 import { cartCountState } from "../../atoms/cartState";
+import SearchComponent from "../searchbar/SearchComponent";
 
 const Desktop = ({
   isAccountDropdownVisible,
@@ -27,7 +28,7 @@ const Desktop = ({
           </Link>
         </div>
         <div>
-          <SearchBar />
+          <SearchComponent />
         </div>
       </div>
       <ul className="flex gap-5 items-center text-[16px]">
